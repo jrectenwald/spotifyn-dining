@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header role="banner">
+    <div id="top-bar">
+      <h4 class="text-white" id="banner-heading">Spotifyn Dining</h1>
+    </div>
+
+    <div class="container logo-wrap">
+      <div class="container">
+        <div class="row pt-4 pb-4">
+          <div class="col-12 text-center">
+            <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+            <%= image_tag "palify.png", id: "header_logo" %>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <nav class="navbar navbar-expand-md  navbar-light bg-light">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Lunching Playlist', song_search_path(keyword: :lunching), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/recommendations">Recommendations</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Favorite Artists</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown05">
+                <a class="dropdown-item" href="category.html">Hall and Oatmeal</a>
+                <a class="dropdown-item" href="category.html">Tina Turnip</a>
+                <a class="dropdown-item" href="category.html">Cole Porterhouse Steak</a>
+                <a class="dropdown-item" href="category.html">The Wonton Clan</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div
+    </nav>
+  </header>
+
+  <%= yield %>
+
+</body>
+</html>
